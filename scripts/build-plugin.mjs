@@ -54,6 +54,25 @@ if (plugin === 'git-logs')
     resolve(output, 'licenses/monaco-third-party.txt'),
   );
 
+if (plugin === 'git-logs') {
+  // 플러그인 페이지 이미지. 스크린샷 원본은 docs/screenshots에 한 벌만 두고 패키징할 때 복사한다.
+  await mkdir(resolve(output, 'assets'), { recursive: true });
+  await copyFile(
+    resolve(source, 'assets/git-logs-icon.png'),
+    resolve(output, 'assets/git-logs-icon.png'),
+  );
+  for (const [from, to] of [
+    ['git-logs-hero.png', 'git-logs-cover.png'],
+    ['git-logs-dark.png', 'git-logs-dark.png'],
+    ['git-logs-light.png', 'git-logs-light.png'],
+    ['git-logs-commit-menu.png', 'git-logs-commit-menu.png'],
+  ])
+    await copyFile(
+      resolve('docs/screenshots', from),
+      resolve(output, 'assets', to),
+    );
+}
+
 if (plugin === 'landmark-island') {
   await copyFile(
     resolve(source, 'licenses/weather.txt'),
@@ -62,6 +81,10 @@ if (plugin === 'landmark-island') {
   await copyFile(
     resolve(source, 'licenses/geography.txt'),
     resolve(output, 'licenses/geography.txt'),
+  );
+  await copyFile(
+    resolve(source, 'licenses/heritage.txt'),
+    resolve(output, 'licenses/heritage.txt'),
   );
   // README images use the same relative paths in source and installed artifacts.
   await mkdir(resolve(output, 'assets'), { recursive: true });

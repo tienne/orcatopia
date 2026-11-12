@@ -1,4 +1,6 @@
+import { additionalScenes } from './scenes';
 import korean from './messages.ko.json';
+import expansion from './landmark-expansion.json';
 import catalog from './landmarks.json';
 import landmarkKorean from './landmarks.ko.json';
 
@@ -24,9 +26,18 @@ export function currentLocale(): string {
   );
 }
 const messages: Record<string, string> = { ...korean };
+for (const entry of expansion) {
+  messages[`${entry.name} garden planting`] = `${entry.nameKo} 정원 식물`;
+  messages[`${entry.name} garden retreat`] = `${entry.nameKo} 정원 쉼터`;
+}
+for (const scene of additionalScenes)
+  messages[scene.description] = scene.descriptionKo;
 for (const landmark of catalog) {
   const translated = landmarkKorean[landmark.id as keyof typeof landmarkKorean];
   if (!translated) continue;
+  messages[`${landmark.name} +`] = `${translated.name} +`;
+  messages[`${landmark.name} star monument`] = `${translated.name} 별빛 기념비`;
+  messages[`Fuse ${landmark.name} +`] = `${translated.name} + 합성`;
   for (const field of [
     'name',
     'country',
