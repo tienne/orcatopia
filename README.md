@@ -81,7 +81,7 @@ Eight additional landmarks replace the generic island aura with their own miniat
 
 All 300 landmarks have individual scenes. Clock towers use clockwork; skyscrapers use lifts; castles and ports feature boats or processions; ruins have excavation or restoration; natural sites use animals, clouds or water. For example, Prague has turning astronomical hands, Matterhorn a climbing cable car, and Mostar a diver jumping into the river. Sagrada Família combines a stone crane and a craftsperson; Ha Long Bay combines a junk boat and a fishing net; Tikal has a swinging monkey and a toucan; Nan Madol combines a canoe, canals and stonework. Reused boats, birds and people have scene-specific positions, routes, props and timing. These miniatures are fictional interpretations, not historical reconstructions or accounts of real equipment operation.
 
-The browser preview searches English and Korean names, countries and scene descriptions. Search filters only the displayed scenes and rarity links without reading or changing a save. Clear search restores all 300 scenes. Individual scenes cover the entire catalog, with stronger tier accents layered around them. Rarity badges, collection styling and the Wonders’ levitation and orbiting stones remain.
+The browser preview searches English and Korean names, countries and scene descriptions. Search filters only the displayed scenes and rarity links without reading or changing a save. Clear search restores all 300 scenes. Only scenes inside the viewport animate; filtered scenes and a hidden page pause. Individual scenes cover the entire catalog, with stronger tier accents layered around them. Rarity badges, collection styling and the Wonders’ levitation and orbiting stones remain.
 
 Individual scenes distinguish the fixed rarity tiers: **I Discovery** uses calm everyday loops, **II Treasure** combines a main scene with a supporting performance, **III Marvel** coordinates reactions between characters and tools, and **IV Wonder** animates the surrounding landscape over a longer scene. Eiffel Tower adds a travelling light show and a visitor taking a photo; Sydney Opera House adds stage lighting and musical notes; Taj Mahal coordinates fountains with the peacock; Colosseum spectators cheer at sword clashes.
 
@@ -295,7 +295,7 @@ One plugin-local collection is shared across repositories/worktrees on this host
 
 Map data: [Natural Earth](https://www.naturalearthdata.com/about/terms-of-use/), public domain. Coordinates for the original 100 landmarks come from Wikidata under CC0. Coordinates for the additional 200 come from UNESCO DataHub under CC BY-SA 4.0. Source links are included in the bundled catalog. See [geography attribution](licenses/geography.txt) and [heritage metadata attribution](licenses/heritage.txt). Geometry is generalized, and small countries may not appear. Fictional island cells are unrelated to geographic coordinates.
 
-Deferred: terrain beyond the 1,044-tile world, cloud sync, trading, languages beyond Korean/English and collections above 300 landmarks. 
+Deferred: terrain beyond the 1,044-tile world, cloud sync, trading, languages beyond Korean/English and collections above 300 landmarks.
 
 ## Verification record (2026-11-05)
 
