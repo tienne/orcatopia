@@ -576,9 +576,9 @@ test('rarity filters, discoveries and progress distinguish unique landmarks from
   );
   const camera = await page.locator('.camera').getAttribute('style');
   for (const [tier, visible, collected, chance, rank, name] of [
-    ['common', 153, 0, 70, 1, 'Discovery'],
-    ['rare', 115, 0, 23, 2, 'Treasure'],
-    ['epic', 24, 0, 6, 3, 'Marvel'],
+    ['common', 154, 0, 70, 1, 'Discovery'],
+    ['rare', 119, 0, 23, 2, 'Treasure'],
+    ['epic', 25, 0, 6, 3, 'Marvel'],
     ['legendary', 8, 1, 1, 4, 'Wonder'],
   ] as const) {
     const filter = page.locator(`[data-tier-filter="${tier}"]`);
@@ -3259,7 +3259,8 @@ test('inventory search combines bilingual names, countries, ownership and catego
   await page.locator('#reset-inventory-filters').click();
   await page.locator('#inventory-category').selectOption('tiles');
   await page.locator('#inventory-stock').selectOption('available');
-  await expect(page.locator('.decoration-card:visible')).toHaveCount(3);
+  await expect(page.locator('.decoration-card:visible')).toHaveCount(4);
+  await expect(page.locator('[data-decor-card=river]')).toBeVisible();
   await search.fill('돌바닥');
   await expect(page.locator('.decoration-card:visible')).toHaveCount(1);
   await expect(page.locator('[data-decor-card=stonepath]')).toBeVisible();
@@ -3274,7 +3275,7 @@ test('inventory search combines bilingual names, countries, ownership and catego
   await expect(page.locator('.inventory-empty')).toBeVisible();
   await page.locator('#clear-inventory-search').click();
   await expect(search).toHaveValue('');
-  await expect(page.locator('.decoration-card:visible')).toHaveCount(3);
+  await expect(page.locator('.decoration-card:visible')).toHaveCount(4);
   expect(
     await page.evaluate(() =>
       JSON.parse(localStorage.getItem('landmark-island-demo-v1')!),
